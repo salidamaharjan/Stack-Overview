@@ -16,8 +16,9 @@ public class Main {
             languages[top] = languageToAdd;
         }
     }
-    public void pop(){
-        if(top < 0) {
+
+    public void pop() {
+        if (top < 0) {
             System.out.println("Cannot remove. Element not found");
         } else {
             languages[top] = null;
@@ -29,23 +30,31 @@ public class Main {
         System.out.println("The language on last index is: " + languages[top]);
     }
 
-    public int length(){
-        return maxStore;
+    public void length() {
+        int lengthCount = 0;
+        for (int i = 0; i < maxStore; i++) {
+            if(languages[i] != null) {
+                lengthCount++;
+            }
+        }
+        System.out.println("The length of Stack: " + lengthCount);
     }
-    public void viewArrayElement(){
+
+    public void viewArrayElement() {
         System.out.println("Language Array: " + Arrays.toString(languages));
     }
+
     public static void main(String[] args) {
         Main stack = new Main();
         stack.push("Java");
         stack.push("JavaScript");
-        stack.peek();
         stack.viewArrayElement();
+        stack.length();
+        stack.peek();
         stack.pop();
         stack.viewArrayElement();
         stack.peek();
-        int lengthOfStack = stack.length();
-        System.out.println("The length of Stack: " + lengthOfStack);
+        stack.length();
         stack.pop();
         stack.viewArrayElement();
     }
