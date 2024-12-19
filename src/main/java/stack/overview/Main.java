@@ -17,13 +17,16 @@ public class Main {
         }
     }
 
-    public void pop() {
+    public String pop() {
+        String eliminated = "";
         if (top < 0) {
             System.out.println("Cannot remove. Element not found");
         } else {
+            eliminated = languages[top];
             languages[top] = null;
             top--;
         }
+        return eliminated;
     }
 
     public void peek() {
@@ -51,11 +54,11 @@ public class Main {
         stack.viewArrayElement();
         stack.length();
         stack.peek();
-        stack.pop();
+        System.out.println("The language eliminated: " + stack.pop());
         stack.viewArrayElement();
         stack.peek();
         stack.length();
-        stack.pop();
+        System.out.println("The language eliminated: " + stack.pop());
         stack.viewArrayElement();
     }
 }
