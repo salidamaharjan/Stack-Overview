@@ -16,13 +16,22 @@ public class Main {
             languages[top] = languageToAdd;
         }
     }
-    
+    public void pop(){
+        if(top < 0) {
+            System.out.println("Cannot remove. Element not found");
+        } else {
+            languages[top] = null;
+            top--;
+        }
+    }
 
     public static void main(String[] args) {
         Main stack = new Main();
         stack.push("Java");
         stack.push("JavaScript");
 
+        System.out.println("Language Array: " + Arrays.toString(stack.languages));
+        stack.pop();
         System.out.println("Language Array: " + Arrays.toString(stack.languages));
 
     }
