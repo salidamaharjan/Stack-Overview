@@ -27,7 +27,9 @@ public class Main {
     public void peek() {
         System.out.println("The language on last index is: " + languages[top]);
     }
-
+    public int length(){
+        return maxStore;
+    }
     public static void main(String[] args) {
         Main stack = new Main();
         stack.push("Java");
@@ -38,5 +40,7 @@ public class Main {
         stack.pop();
         System.out.println("Language Array: " + Arrays.toString(stack.languages));
         stack.peek();
+        int lengthOfStack = stack.length();
+        System.out.println("The length of Stack: " + lengthOfStack);
     }
 }
