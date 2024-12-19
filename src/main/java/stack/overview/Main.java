@@ -9,5 +9,7 @@ public class Main {
         languagesLearned.setLanguages("TypeScript");
         languagesLearned.setLanguages("Java");
         System.out.println("Languages Learned: " + languagesLearned.getLanguages());
+        languagesLearned.removeLanguage();
+        System.out.println("Languages Learned: " + languagesLearned.getLanguages());
     }
 }

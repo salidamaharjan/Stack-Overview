@@ -17,4 +17,7 @@ public class StackOverview {
         this.languages.push(language);
     }
 
+    public void removeLanguage() {
+        languages.pop();
+    }
 }
