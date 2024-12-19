@@ -24,15 +24,19 @@ public class Main {
             top--;
         }
     }
+    public void peek() {
+        System.out.println("The language on last index is: " + languages[top]);
+    }
 
     public static void main(String[] args) {
         Main stack = new Main();
         stack.push("Java");
+        stack.peek();
         stack.push("JavaScript");
-
+        stack.peek();
         System.out.println("Language Array: " + Arrays.toString(stack.languages));
         stack.pop();
         System.out.println("Language Array: " + Arrays.toString(stack.languages));
-
+        stack.peek();
     }
 }
