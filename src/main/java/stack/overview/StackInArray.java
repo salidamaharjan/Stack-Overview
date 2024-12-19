@@ -3,7 +3,7 @@ package stack.overview;
 import java.util.Arrays;
 
 //push pop length;
-public class Main {
+public class StackInArray {
     int maxStore = 5;
     String[] languages = new String[maxStore];
     int top = -1;
@@ -48,7 +48,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Main stack = new Main();
+        StackInArray stack = new StackInArray();
         stack.push("Java");
         stack.push("JavaScript");
         stack.viewArrayElement();
