@@ -18,7 +18,7 @@ public class Main {
     }
 
     public String pop() {
-        String eliminated = "";
+        String eliminated = null;
         if (top < 0) {
             System.out.println("Cannot remove. Element not found");
         } else {
@@ -60,5 +60,6 @@ public class Main {
         stack.length();
         System.out.println("The language eliminated: " + stack.pop());
         stack.viewArrayElement();
+        System.out.println("The language eliminated: " + stack.pop());
     }
 }
