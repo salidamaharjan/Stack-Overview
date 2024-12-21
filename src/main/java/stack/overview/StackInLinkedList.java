@@ -1,33 +1,41 @@
 package stack.overview;
 
-import java.util.LinkedList;
 
 public class StackInLinkedList {
-    LinkedList<Integer> linkedListOfNum = new LinkedList<>();
-    int index = -1;
 
-    public void push(Integer num){
-        index++;
-        linkedListOfNum.add(num);
+    public void push(int num) {
     }
 
     public int pop() {
-        int removedNum = linkedListOfNum.get(index);
-        linkedListOfNum.remove(index);
-        index--;
-        return removedNum;
+        return -1;
+    }
+
+    public void length() {
+
     }
 
     public void viewElement() {
-        System.out.println("LinkList element: " + linkedListOfNum);
+
     }
 
     public static void main(String[] args) {
-        StackInLinkedList listOfNum = new StackInLinkedList();
-        listOfNum.push(13);
-        listOfNum.viewElement();
-        listOfNum.push(18);
-        listOfNum.viewElement();
-        System.out.println("Removed Number is: " + listOfNum.pop());
     }
 }
+
+class Node {
+    private Node next;
+    private String value;
+    public Node getNext(){
+        return next;
+    }
+    public void setNext(Node next){
+        this.next = next;
+    }
+    public String getValue(){
+        return this.value;
+    }
+    public void setValue(String value) {
+        this.value = value;
+    }
+}
+
