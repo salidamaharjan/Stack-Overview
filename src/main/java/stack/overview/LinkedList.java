@@ -30,12 +30,30 @@ public class LinkedList {
         lastNode.setNext(newNode);
     }
 
+    public String get(Integer index) {
+        String s = null;
+        if(index >= length) {
+            s = "Node at " + index + " not found!";
+            return s;
+        }
+        return s;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
+        ll.add("0");
         ll.add("1");
         ll.add("2");
         ll.add("3");
         ll.add("4");
+
+//        System.out.println("Size == " + ll.length);
+        System.out.println("Item at 0 index is: " + ll.get(0));
+        System.out.println("Item at 1 index is: " + ll.get(1));
+        System.out.println("Item at 2 index is: " + ll.get(2));
+        System.out.println("Item at 3 index is: " + ll.get(3));
+  System.out.println("Item at 4 index is: " + ll.get(4));
+System.out.println("Item at 9 index is: " + ll.get(9));
     }
 }
 
