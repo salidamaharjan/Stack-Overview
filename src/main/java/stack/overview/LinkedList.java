@@ -12,23 +12,18 @@ public class LinkedList {
     public void add(String name) {
         Node newNode = new Node();
         newNode.setValue(name);
-
         length++;
-
-        // list was empty, so head doens't hold anything
-        if (head == null) {
+        if( head == null){
             head = newNode;
             return;
         }
-        // list is not empty, so we need to find the last item
-        Node lastNode = head; // assume head is the last item to begin with
-        while (lastNode.getNext() != null) { // traverse next node until we find a node that doesn't have next i.e. next == null
-            lastNode = lastNode.getNext(); // update lastNode because our old assumption was incorrect
+        Node lastNode = head;
+        while(lastNode.getNext() != null){
+            lastNode = lastNode.getNext();
         }
-        // we found the last node
-        // so we use setNext to set our newly created node at the end
         lastNode.setNext(newNode);
     }
+
 
     public String get(Integer index) {
 
