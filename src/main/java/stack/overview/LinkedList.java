@@ -31,12 +31,18 @@ public class LinkedList {
     }
 
     public String get(Integer index) {
-        String s = null;
-        if(index >= length) {
-            s = "Node at " + index + " not found!";
-            return s;
+
+        if (index >= length) {
+            return "Not found!";
         }
-        return s;
+        if (index == 0) {
+            return head.getValue();
+        }
+        Node curHead = head;
+        for (int i = 0; i < index; i++) {
+            curHead = curHead.getNext();
+        }
+        return curHead.getValue();
     }
 
     public static void main(String[] args) {
@@ -48,12 +54,13 @@ public class LinkedList {
         ll.add("4");
 
 //        System.out.println("Size == " + ll.length);
-        System.out.println("Item at 0 index is: " + ll.get(0));
-        System.out.println("Item at 1 index is: " + ll.get(1));
-        System.out.println("Item at 2 index is: " + ll.get(2));
-        System.out.println("Item at 3 index is: " + ll.get(3));
-  System.out.println("Item at 4 index is: " + ll.get(4));
-System.out.println("Item at 9 index is: " + ll.get(9));
+        System.out.println("Item at 0 index: " + ll.get(0));
+        System.out.println("Item at 1 index: " + ll.get(1));
+        System.out.println("Item at 2 index: " + ll.get(2));
+        System.out.println("Item at 3 index: " + ll.get(3));
+        System.out.println("Item at 4 index: " + ll.get(4));
+        System.out.println("Item at 9 index: " + ll.get(9));
+        System.out.println("Item at 1 index: " + ll.get(1));
     }
 }
 
