@@ -30,6 +30,24 @@ public class LinkedList {
         lastNode.setNext(newNode);
     }
 
+    public void remove(Integer index) {
+        if (index >= length) {
+            System.out.println("Node out of bound!");
+            return;
+        }
+        Node curNode = head;
+        Node prevNode = null;
+        length--;
+        for (int i = 0; i < index; i++) {
+            prevNode = curNode;
+            curNode = curNode.getNext();
+        }
+        if (prevNode == null) {
+            head = curNode.getNext();
+        } else {
+            prevNode.setNext(curNode.getNext());
+        }
+    }
 
     public String get(Integer index) {
 
@@ -46,6 +64,15 @@ public class LinkedList {
         return curHead.getValue();
     }
 
+    public String toString() {
+        String out = "[";
+        for (int i = 0; i < length; i++) {
+            out += (get(i) + ", ");
+        }
+        out += "]";
+        return out;
+    }
+
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
         ll.add("0");
@@ -53,15 +80,9 @@ public class LinkedList {
         ll.add("2");
         ll.add("3");
         ll.add("4");
-
-//        System.out.println("Size == " + ll.length);
-        System.out.println("Item at 0 index: " + ll.get(0));
-        System.out.println("Item at 1 index: " + ll.get(1));
-        System.out.println("Item at 2 index: " + ll.get(2));
-        System.out.println("Item at 3 index: " + ll.get(3));
-        System.out.println("Item at 4 index: " + ll.get(4));
-        System.out.println("Item at 9 index: " + ll.get(9));
-        System.out.println("Item at 1 index: " + ll.get(1));
+        System.out.println(ll);
+        ll.remove(1);
+        System.out.println(ll);
     }
 }
 
