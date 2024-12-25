@@ -8,5 +8,9 @@ public class Main {
         System.out.println(newStack);
         System.out.println("Removed string: " + newStack.remove());
         System.out.println(newStack);
+        MyQueue newQueue = new MyQueue();
+        newQueue.add("Queue1");
+        newQueue.add("Queue2");
+        System.out.println(newQueue);
     }
 }
