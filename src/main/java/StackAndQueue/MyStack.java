@@ -14,53 +14,55 @@ public class MyStack implements MyList {
         Node newNode = new Node();
         newNode.setValue(s);
         length++;
-        if(head == null){
+        if (head == null) {
             head = newNode;
             return;
         }
         Node curHead = head;
-       while(head.getNext() != null){
-           head = head.getNext();
-       }
-       curHead.setNext(newNode);
+        while (curHead.getNext() != null) {
+            curHead = curHead.getNext();
+        }
+        curHead.setNext(newNode);
     }
 
     @Override
     public String remove() {
-        Node prevNode;
-        Node lastNode = head;
-        if(head == null) {
-            return null;
+        Node curNode = head;
+        Node prevNode = head;
+        if (length == 1) {
+            head = null;
+            length--;
+            return prevNode.getValue();
         }
-        length --;
-        for(int i = 0; i < length; i++){
-            prevNode = head;
-            lastNode = prevNode.getNext();
+        while(curNode.getNext() != null){
+            prevNode = curNode;
+            curNode = curNode.getNext();
         }
-        if(lastNode.getNext() == null) {
-            return lastNode.getValue();
-        }
-        return null;
+        prevNode.setNext(null);
+        length--;
+       return curNode.getValue();
     }
 
     @Override
     public String peek(int index) {
-        if(index >= length) {
+        if (index >= length) {
             return "Index out of bound";
         }
         if (index == 0) {
             return head.getValue();
         }
         Node curHead = head;
+
         for (int i = 0; i < index; i++) {
             curHead = curHead.getNext();
         }
+
         return curHead.getValue();
     }
 
-    public String toString(){
+    public String toString() {
         String outputInString = "[";
-        for(int i = 0 ; i < length; i++){
+        for (int i = 0; i < length; i++) {
             outputInString += peek(i) + ",";
         }
         outputInString += "]";

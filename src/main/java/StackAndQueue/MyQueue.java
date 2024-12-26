@@ -14,13 +14,13 @@ public class MyQueue implements MyList {
         Node newNode = new Node();
         newNode.setValue(s);
         length++;
-        if( head == null){
+        if (head == null) {
             head = newNode;
             return;
         }
         Node lastNode = head;
-        while(head.getNext() != null){
-            head = head.getNext();
+        while (lastNode.getNext() != null) {
+            lastNode = lastNode.getNext();
         }
         lastNode.setNext(newNode);
 
@@ -28,34 +28,42 @@ public class MyQueue implements MyList {
 
     @Override
     public String remove() {
-        return "";
+        if (head == null) {
+            return null;
+        }
+        Node firstHead = head;
+        if(head.getNext() != null) {
+           head = firstHead.getNext();
+        }
+        length--;
+        return firstHead.getValue();
     }
 
     @Override
     public String peek(int index) {
-        if(index >= length){
+        if (index >= length) {
             return "Index out of bound";
         }
-        if(head == null) {
+        if (head == null) {
             return null;
         }
-        if(index == 0) {
+        if (index == 0) {
             return head.getValue();
         }
         Node curNode = head;
-        for(int i = 0; i < index; i++) {
-           curNode = curNode.getNext();
+        for (int i = 0; i < index; i++) {
+            curNode = curNode.getNext();
         }
         return curNode.getValue();
     }
 
-    public String toString(){
+    public String toString() {
         String out = "[";
-        for (int i = 0; i < length; i++){
+        for (int i = 0; i < length; i++) {
             out += peek(i) + ",";
         }
-       out += "]";
-        return  out;
+        out += "]";
+        return out;
     }
 }
 
