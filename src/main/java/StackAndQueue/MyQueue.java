@@ -31,12 +31,10 @@ public class MyQueue implements MyList {
         if (head == null) {
             return null;
         }
-        Node firstHead = head;
-        if(head.getNext() != null) {
-           head = firstHead.getNext();
-        }
+        Node curHead = head;
+        head = head.getNext();
         length--;
-        return firstHead.getValue();
+        return curHead.getValue();
     }
 
     @Override

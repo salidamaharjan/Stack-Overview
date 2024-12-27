@@ -21,16 +21,16 @@ public class Main {
         newStack.add("String6");
         System.out.println(newStack);
 
-//        MyQueue newQueue = new MyQueue();
-//        System.out.println(newQueue);
-//        newQueue.add("Queue1");
-//        newQueue.add("Queue2");
-//        System.out.println(newQueue);
-//        System.out.println("Removed queue: " + newQueue.remove());
-//        System.out.println(newQueue);
-//        System.out.println("Removed queue: " + newQueue.remove());
-//        System.out.println(newQueue);
-//        newQueue.add("Queue3");
-//        System.out.println(newQueue);
+        MyQueue newQueue = new MyQueue();
+        System.out.println(newQueue);
+        newQueue.add("Queue1");
+        newQueue.add("Queue2");
+        System.out.println(newQueue);
+        System.out.println("Removed queue: " + newQueue.remove());
+        System.out.println(newQueue);
+        System.out.println("Removed queue: " + newQueue.remove());
+        System.out.println(newQueue);
+        newQueue.add("Queue3");
+        System.out.println(newQueue);
     }
 }
