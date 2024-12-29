@@ -48,6 +48,9 @@ public class MyStack implements MyList {
         if (index >= length) {
             return "Index out of bound";
         }
+        if(index < 0 ){
+            return null;
+        }
         if (index == 0) {
             return head.getValue();
         }
