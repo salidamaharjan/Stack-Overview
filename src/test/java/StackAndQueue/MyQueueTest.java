@@ -62,8 +62,8 @@ class MyQueueTest {
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
         newQueue.add("A");
-        assertEquals(newQueue.peek(0), "S");
-        assertEquals(newQueue.peek(1), "A");
+        assertEquals("S", newQueue.peek(0));
+        assertEquals("A", newQueue.peek(1));
     }
 
     @Test
@@ -71,6 +71,13 @@ class MyQueueTest {
         MyQueue newQueue = new MyQueue();
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
-        assertEquals(newQueue.toString(), "[S,]");
+        newQueue.add("A");
+        newQueue.add("L");
+        newQueue.add("I");
+        newQueue.add("D");
+        newQueue.add("A");
+        assertEquals("[S,A,L,I,D,A,]", newQueue.toString());
+        newQueue.remove();
+        assertEquals("[A,L,I,D,A,]", newQueue.toString());
     }
 }
