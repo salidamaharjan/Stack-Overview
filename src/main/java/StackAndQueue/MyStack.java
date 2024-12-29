@@ -9,6 +9,9 @@ public class MyStack implements MyList {
         length = 0;
     }
 
+    public Integer size(){
+        return length;
+    }
     @Override
     public void add(String s) {
         Node newNode = new Node();

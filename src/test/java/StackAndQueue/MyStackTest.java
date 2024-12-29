@@ -13,8 +13,18 @@ class MyStackTest {
         MyStack newStack = new MyStack();
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
+        assertEquals("S", newStack.peek(0));
+        newStack.add("A");
+        assertEquals("A", newStack.peek(1));
+        newStack.add("L");
+        assertEquals("L", newStack.peek(2));
+        newStack.add("I");
+        assertEquals("I", newStack.peek(3));
+        newStack.add("D");
+        assertEquals("D", newStack.peek(4));
+        newStack.add("A");
+        assertEquals("A", newStack.peek(5));
         assertNotNull(newStack);
-        assertEquals(newStack.peek(0), "S");
     }
 
     @Test
