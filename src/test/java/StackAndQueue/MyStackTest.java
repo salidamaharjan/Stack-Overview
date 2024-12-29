@@ -49,6 +49,19 @@ class MyStackTest {
         remove = newStack.remove();
         assertEquals("D", remove);
         assertEquals(4, newStack.size());
+        remove = newStack.remove();
+        assertEquals("I", remove);
+        assertEquals(3, newStack.size());
+        remove = newStack.remove();
+        assertEquals("L", remove);
+        assertEquals(2, newStack.size());
+        remove = newStack.remove();
+        assertEquals("A", remove);
+        assertEquals(1, newStack.size());
+        remove = newStack.remove();
+        assertEquals("S", remove);
+        assertEquals(0, newStack.size());
+        assertEquals("[]", newStack.toString());
     }
 
     @Test
@@ -57,10 +70,16 @@ class MyStackTest {
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
         newStack.add("A");
-        newStack.add("T");
-        newStack.add("M");
-        assertEquals(newStack.peek(1), "A");
-        assertEquals(newStack.peek(0), "S");
+        newStack.add("L");
+        newStack.add("I");
+        newStack.add("D");
+        newStack.add("A");
+        assertEquals("S", newStack.peek(0));
+        assertEquals("A", newStack.peek(1));
+        assertEquals("L", newStack.peek(2));
+        assertEquals("I", newStack.peek(3));
+        assertEquals("D", newStack.peek(4));
+        assertEquals("A", newStack.peek(5));
     }
 
     @Test
