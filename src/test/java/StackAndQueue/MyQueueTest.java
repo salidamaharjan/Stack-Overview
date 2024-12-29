@@ -39,5 +39,9 @@ class MyQueueTest {
 
     @Test
     void testToString() {
+        MyQueue newQueue = new MyQueue();
+        assertEquals(newQueue.toString(), "[]");
+        newQueue.add("S");
+        assertEquals(newQueue.toString(), "[S,]");
     }
 }
