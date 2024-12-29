@@ -43,5 +43,10 @@ class MyStackTest {
 
     @Test
     void testToString() {
+        MyStack newStack = new MyStack();
+        assertEquals(newStack.toString(), "[]");
+        newStack.add("S");
+        newStack.add("A");
+        assertEquals(newStack.toString(),"[S,A,]");
     }
 }
