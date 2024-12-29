@@ -11,11 +11,17 @@ class MyQueueTest {
         MyQueue newQueue = new MyQueue();
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
+        assertEquals(1, newQueue.size());
         newQueue.add("A");
+        assertEquals(2, newQueue.size());
         newQueue.add("L");
+        assertEquals(3, newQueue.size());
         newQueue.add("I");
+        assertEquals(4, newQueue.size());
         newQueue.add("D");
+        assertEquals(5, newQueue.size());
         newQueue.add("A");
+        assertEquals(6, newQueue.size());
         assertEquals("S", newQueue.peek(0));
         assertEquals("A", newQueue.peek(1));
         assertEquals("L", newQueue.peek(2));
