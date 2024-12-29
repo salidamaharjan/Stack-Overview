@@ -29,6 +29,12 @@ class MyQueueTest {
 
     @Test
     void peek() {
+        MyQueue newQueue = new MyQueue();
+        assertEquals(newQueue.toString(), "[]");
+        newQueue.add("S");
+        newQueue.add("A");
+        assertEquals(newQueue.peek(0), "S");
+        assertEquals(newQueue.peek(1), "A");
     }
 
     @Test
