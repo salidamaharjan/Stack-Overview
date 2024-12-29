@@ -8,7 +8,9 @@ public class MyQueue implements MyList {
         head = null;
         length = 0;
     }
-
+    public Integer size(){
+        return this.length;
+    }
     @Override
     public void add(String s) {
         Node newNode = new Node();

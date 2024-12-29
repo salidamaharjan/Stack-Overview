@@ -12,8 +12,16 @@ class MyQueueTest {
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
         newQueue.add("A");
-        assertEquals(newQueue.peek(0), "S");
-        assertEquals(newQueue.peek(1), "A");
+        newQueue.add("L");
+        newQueue.add("I");
+        newQueue.add("D");
+        newQueue.add("A");
+        assertEquals("S", newQueue.peek(0));
+        assertEquals("A", newQueue.peek(1));
+        assertEquals("L", newQueue.peek(2));
+        assertEquals("I", newQueue.peek(3));
+        assertEquals("D", newQueue.peek(4));
+        assertEquals("A", newQueue.peek(5));
     }
 
     @Test
@@ -22,8 +30,29 @@ class MyQueueTest {
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
         newQueue.add("A");
-        assertEquals(newQueue.peek(0), newQueue.remove());
-        assertEquals(newQueue.peek(0), newQueue.remove());
+        newQueue.add("L");
+        newQueue.add("I");
+        newQueue.add("D");
+        newQueue.add("A");
+
+        String remove = newQueue.remove();
+        assertEquals("S", remove);
+        assertEquals(5, newQueue.size());
+        remove = newQueue.remove();
+        assertEquals(4, newQueue.size());
+        assertEquals("A", remove);
+        remove = newQueue.remove();
+        assertEquals("L", remove);
+        assertEquals(3, newQueue.size());
+        remove = newQueue.remove();
+        assertEquals("I", remove);
+        assertEquals(2, newQueue.size());
+        remove = newQueue.remove();
+        assertEquals("D", remove);
+        assertEquals(1, newQueue.size());
+        remove = newQueue.remove();
+        assertEquals("A", remove);
+        assertEquals(0, newQueue.size());
         assertNull(newQueue.remove());
     }
 
