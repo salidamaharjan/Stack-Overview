@@ -9,9 +9,10 @@ public class MyStack implements MyList {
         length = 0;
     }
 
-    public Integer size(){
+    public Integer size() {
         return length;
     }
+
     @Override
     public void add(String s) {
         Node newNode = new Node();
@@ -37,13 +38,13 @@ public class MyStack implements MyList {
             length--;
             return prevNode.getValue();
         }
-        while(curNode.getNext() != null){
+        while (curNode.getNext() != null) {
             prevNode = curNode;
             curNode = curNode.getNext();
         }
         prevNode.setNext(null);
         length--;
-       return curNode.getValue();
+        return curNode.getValue();
     }
 
     @Override
@@ -51,7 +52,7 @@ public class MyStack implements MyList {
         if (index >= length) {
             return "Index out of bound";
         }
-        if(index < 0 ){
+        if (index < 0) {
             return null;
         }
         if (index == 0) {

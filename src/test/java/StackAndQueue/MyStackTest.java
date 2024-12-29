@@ -39,10 +39,16 @@ class MyStackTest {
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
         newStack.add("A");
-        newStack.add("T");
-        newStack.add("M");
-        assertEquals(newStack.peek(3), newStack.remove());
-        assertEquals(newStack.peek(2), newStack.remove());
+        newStack.add("L");
+        newStack.add("I");
+        newStack.add("D");
+        newStack.add("A");
+        String remove = newStack.remove();
+        assertEquals("A", remove);
+        assertEquals(5, newStack.size());
+        remove = newStack.remove();
+        assertEquals("D", remove);
+        assertEquals(4, newStack.size());
     }
 
     @Test
