@@ -8,6 +8,9 @@ class MyQueueTest {
 
     @Test
     void add() {
+        MyQueue newQueue = new MyQueue();
+        assertEquals(newQueue.toString(), "[]");
+        newQueue.add("S");
     }
 
     @Test
