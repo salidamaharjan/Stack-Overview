@@ -88,6 +88,8 @@ class MyStackTest {
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
         newStack.add("A");
-        assertEquals(newStack.toString(),"[S,A,]");
+        assertEquals("[S,A,]",newStack.toString());
+        newStack.remove();
+        assertEquals("[S,]",newStack.toString());
     }
 }
