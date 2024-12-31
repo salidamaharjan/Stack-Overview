@@ -8,7 +8,7 @@ class MyQueueTest {
 
     @Test
     void add() {
-        MyQueue newQueue = new MyQueue();
+        MyQueue<String> newQueue = new MyQueue<>();
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
         assertEquals(1, newQueue.size());
@@ -32,7 +32,7 @@ class MyQueueTest {
 
     @Test
     void remove() {
-        MyQueue newQueue = new MyQueue();
+        MyQueue<String> newQueue = new MyQueue<>();
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
         newQueue.add("A");
@@ -64,7 +64,7 @@ class MyQueueTest {
 
     @Test
     void peek() {
-        MyQueue newQueue = new MyQueue();
+        MyQueue<String> newQueue = new MyQueue<>();
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
         newQueue.add("A");
@@ -74,7 +74,7 @@ class MyQueueTest {
 
     @Test
     void testToString() {
-        MyQueue newQueue = new MyQueue();
+        MyQueue<String> newQueue = new MyQueue<>();
         assertEquals(newQueue.toString(), "[]");
         newQueue.add("S");
         newQueue.add("A");

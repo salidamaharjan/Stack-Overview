@@ -1,7 +1,7 @@
 package StackAndQueue;
 
-public class MyQueue implements MyList {
-    private Node head;
+public class MyQueue<T> implements MyList<T>{
+    private Node<T> head;
     private Integer length;
 
     public MyQueue() {
@@ -14,15 +14,15 @@ public class MyQueue implements MyList {
     }
 
     @Override
-    public void add(String s) {
-        Node newNode = new Node();
+    public void add(T s) {
+        Node<T> newNode = new Node();
         newNode.setValue(s);
         length++;
         if (head == null) {
             head = newNode;
             return;
         }
-        Node lastNode = head;
+        Node<T> lastNode = head;
         while (lastNode.getNext() != null) {
             lastNode = lastNode.getNext();
         }
@@ -31,20 +31,20 @@ public class MyQueue implements MyList {
     }
 
     @Override
-    public String remove() {
+    public T remove() {
         if (head == null) {
             return null;
         }
-        Node curHead = head;
+        Node<T> curHead = head;
         head = head.getNext();
         length--;
         return curHead.getValue();
     }
 
     @Override
-    public String peek(int index) {
+    public T peek(int index) {
         if (index >= length) {
-            return "Index out of bound";
+            throw new IllegalArgumentException("Index greater than length");
         }
         if (head == null) {
             return null;
@@ -52,7 +52,7 @@ public class MyQueue implements MyList {
         if (index == 0) {
             return head.getValue();
         }
-        Node curNode = head;
+        Node<T> curNode = head;
         for (int i = 0; i < index; i++) {
             curNode = curNode.getNext();
         }

@@ -1,9 +1,9 @@
 package StackAndQueue;
 
-public interface MyList {
-    void add(String s);
+public interface MyList<T> {
+    void add(T s);
 
-    String remove();
+    T remove();
 
-    String peek(int index);
+    T peek(int index);
 }

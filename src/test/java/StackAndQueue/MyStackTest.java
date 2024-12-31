@@ -10,7 +10,7 @@ class MyStackTest {
 
     @Test
     void add() {
-        MyStack newStack = new MyStack();
+        MyStack<String> newStack = new MyStack<>();
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
         assertEquals("S", newStack.peek(0));
@@ -35,7 +35,7 @@ class MyStackTest {
 
     @Test
     void remove() {
-        MyStack newStack = new MyStack();
+        MyStack<String> newStack = new MyStack<>();
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
         newStack.add("A");
@@ -66,7 +66,7 @@ class MyStackTest {
 
     @Test
     void peek() {
-        MyStack newStack = new MyStack();
+        MyStack<String> newStack = new MyStack<>();
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
         newStack.add("A");
@@ -84,7 +84,7 @@ class MyStackTest {
 
     @Test
     void testToString() {
-        MyStack newStack = new MyStack();
+        MyStack<String> newStack = new MyStack<>();
         assertEquals(newStack.toString(), "[]");
         newStack.add("S");
         newStack.add("A");

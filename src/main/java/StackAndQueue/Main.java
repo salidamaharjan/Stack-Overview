@@ -2,7 +2,7 @@ package StackAndQueue;
 
 public class Main {
     public static void main(String[] args) {
-        MyStack newStack = new MyStack();
+        MyStack<String> newStack = new MyStack<>();
         System.out.println(newStack);
         newStack.add("String1");
         newStack.add("String2");
@@ -21,7 +21,7 @@ public class Main {
         newStack.add("String6");
         System.out.println(newStack);
 
-        MyQueue newQueue = new MyQueue();
+        MyQueue<String> newQueue = new MyQueue<>();
         System.out.println(newQueue);
         newQueue.add("Queue1");
         newQueue.add("Queue2");
